@@ -1,4 +1,3 @@
-//分文件版本
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -6,6 +5,7 @@
 #include <string.h>
 #include <conio.h>
 #include "shengming.h"
+
 
 /*宏定义区*/ 
 #define  ADMIN_password "123456" /*管理员登录密码*/
@@ -190,8 +190,6 @@ void search_member()
 	
 }
 
-
-
 int user_account(char account[20])
 {
 	FILE *p2,*p3;
@@ -207,11 +205,13 @@ int user_account(char account[20])
 	number=0;	
 	while(!feof(p2))
 	{
-		
+		fscanf(p2,"%s %s %s %s %s",member[number].ID,member[number].password,
+				member[number].password_key,member[number].name,member[number].sex);
 		number++;
 	}
 	fclose(p2);
 	
+
 	p3=fopen("memberbook.txt","r");
 			booknumber=0;
 			while(!feof(p3))
@@ -298,7 +298,7 @@ int user_account(char account[20])
 							flag=0; 
 							
 						//修改名字
-						 printf("\nPS:是否需要修改名字(y/n):");
+						printf("\nPS:是否需要修改名字(y/n):");
 						fflush(stdin);
 						choice=getch();
 						while(choice!='Y'&&choice!='y'&&choice!='N'&&choice!='n')
@@ -360,6 +360,7 @@ int user_account(char account[20])
 		}
     else
 	{
+		system("pause");
    		return 0;
 	}
 }
