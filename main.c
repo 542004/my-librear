@@ -7,7 +7,7 @@
 #include <time.h>
 #include <string.h>
 #include <conio.h>
-
+#include "shengming.h" 
 
 /*宏定义区*/ 
 #define  ADMIN_password "123456" /*管理员登录密码*/
