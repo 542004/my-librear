@@ -1,7 +1,7 @@
 #ifndef _MYSELF_HEAD_
 #define _MYSELF_HEAD_
 
-     /*结构体声明区*/
+/*结构体声明区*/
 typedef struct bookinfo/*系统图书信息 */ 
 {
     char number[15];/*图书编号*/
@@ -49,7 +49,7 @@ void menu3();
 /*工具函数区*/
 int compare_password(char password[20]);/*密码比对函数 */  
 void clock_delay(); /*时间延时函数*/ 
-
+void password_circle();
 
 /*会员信息系统层级函数区*/
 int user_account(char account[20]);/*个人账户信息*/ //我的资料，修改资料，已借图书 
@@ -76,3 +76,4 @@ void show_member(char account[20]);
 //借书管理 
 void borrow_book(char account[20]);/*借书*/
 void return_book(char account[20]);/*还书*/
+void display_memberbook();//借阅记录 
